@@ -104,7 +104,7 @@ public abstract class ShareIntent {
         Intent chooser = Intent.createChooser(this.getIntent(), this.chooserTitle);
         chooser.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        if (options && ShareIntent.hasValidKey("showAppsToView", options)) {
+        if (options != null && ShareIntent.hasValidKey("showAppsToView", options)) {
             Intent viewIntent = new Intent(Intent.ACTION_VIEW);
             viewIntent.setType(this.fileShare.getType());
 
